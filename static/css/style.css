@@ -139,13 +139,13 @@ body {
 }
 input#message {
   flex: 1;
-  padding: 16px 12px; /* slightly taller input */
+  padding: 16px 12px;
   border-radius: 8px;
   border: 1px solid #ccc;
-  font-size: 14px; /* slightly smaller font */
+  font-size: 14px;
 }
 
-/* Send button as up arrow */
+/* Send button */
 button#sendBtn {
   background: #000;
   color: #fff;
@@ -165,7 +165,7 @@ button#sendBtn:hover {
   transform: scale(1.1);
 }
 
-/* Save button icon */
+/* Save button */
 button#saveTranscript {
   background: none;
   border: none;
@@ -202,7 +202,7 @@ button#saveTranscript:hover {
   40% { opacity: 1; }
 }
 
-/*Time Stamp for each message*/
+/* Time Stamp for each message */
 .message-wrapper {
   display: flex;
   flex-direction: column;
@@ -211,15 +211,15 @@ button#saveTranscript:hover {
 
 /* User message */
 .message-wrapper .message.user {
-  align-self: flex-end; /* bubble on right */
+  align-self: flex-end;
 }
 
 /* Bot message */
 .message-wrapper .message.bot {
-  align-self: flex-start; /* bubble on left */
+  align-self: flex-start;
 }
 
-/* Inline timestamp under message */
+/* Inline timestamp */
 .inline-timestamp {
   font-size: 12px;
   color: #777;
@@ -228,21 +228,32 @@ button#saveTranscript:hover {
   transform: translateY(-5px);
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
-
-/* Fade in animation */
 .inline-timestamp.fade-in {
   opacity: 1;
   transform: translateY(0);
 }
-
-/* Align timestamp under the message correctly */
 .message-wrapper .message.user + .inline-timestamp {
-  align-self: flex-end; /* timestamp under user bubble */
+  align-self: flex-end;
 }
-
 .message-wrapper .message.bot + .inline-timestamp {
-  align-self: flex-start; /* timestamp under bot bubble */
+  align-self: flex-start;
 }
 
+/* ----------- ADDITION: Responsive for Mobile ------------ */
+@media (max-width: 480px) {
+  .chat-window {
+    width: 90vw;       /* scale width to 90% of screen */
+    height: 75vh;      /* scale height to 75% of screen */
+    bottom: 20px;      /* slightly above bubble */
+    right: 5%;         /* keep margin from edge */
+  }
+}
 
-
+/* Optional extra small phones */
+@media (max-width: 350px) {
+  .chat-window {
+    width: 95vw;
+    height: 70vh;
+    right: 2.5%;
+  }
+}
