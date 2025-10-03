@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Business Chatbot</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+  <!-- Chat Bubble Icon -->
+  <div id="chatBubble" class="chat-bubble">
+    <i class="fas fa-comment"></i>
+  </div>
+
+  <!-- Chat Window -->
+  <div id="chatWindow" class="chat-window hidden">
+    <div class="chat-header">
+      <span style="flex:1; text-align:center;">Chat</span>
+      <span id="timeStampHeader"></span>
+      <div style="display:flex; gap:8px;">
+        <button id="saveTranscript" title="Download chat"><i class="fas fa-download"></i></button>
+        <button id="closeChat" title="Close chat">✖</button>
+      </div>
+    </div>
+
+    <div id="chat" class="chat-box"></div>
+
+    <div class="chat-input-container">
+      <input id="message" placeholder="Ask a question..." />
+      <button id="sendBtn"><i class="fas fa-arrow-up"></i></button>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+</body>
+</html>
